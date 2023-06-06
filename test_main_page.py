@@ -1,3 +1,5 @@
+#файл реализации методов проверки страницы
+
 from selenium.webdriver.common.by import By
 #импорт файла с методом нахождения кнопки на странице и кликом
 from .pages.main_page import MainPage
