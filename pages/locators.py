@@ -16,4 +16,4 @@ class LoginPageLocators():
     
     REG_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
     REG_PASS = (By.CSS_SELECTOR, "#id_registration-password1")
-    RED_PASS2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REG_PASS2 = (By.CSS_SELECTOR, "#id_registration-password2")

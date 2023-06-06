@@ -3,6 +3,8 @@
 from selenium.webdriver.common.by import By
 #импорт файла с методом нахождения кнопки на странице и кликом
 from .pages.main_page import MainPage
+#реализуем переход на страницу с логином (СПОСОБ 2)
+from .pages.login_page import LoginPage
 
 #вместо этого
 
@@ -24,6 +26,16 @@ def test_guest_can_go_to_login_page(browser):
     page.open()
     #вызываем метод поиска элемента и клика из наследника BasePage
     page.go_to_login_page()
+
+    #ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ (СПОСОБ 1):
+    #login_page = page.go_to_login_page() -вместо просто page.go_to_login_page() присваиваем объект переменной
+    #login_page.should_be_login_page()
+    #, где присваиваем переменной объект с методом клика и перехода на другую страницу (из файла main_page.py),
+    # а потом вызываем метод из LoginPage(BasePage), который вызывает три метода с проверками полей
+
+    #ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ (СПОСОБ 2):
+    login_page = LoginPage(browser, browser.current_url)
+    login_page.should_be_login_page()
 
 #добавлю новый кейс с другим методом из MainPage -
 #проверка наличия ссылки
