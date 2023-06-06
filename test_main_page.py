@@ -22,3 +22,13 @@ def test_guest_can_go_to_login_page(browser):
     page.open()
     #вызываем метод поиска элемента и клика из наследника BasePage
     page.go_to_login_page()
+
+#добавлю новый кейс с другим методом из MainPage -
+#проверка наличия ссылки
+def test_guest_should_see_login_link(browser):
+    #снова объявляем ссылку, создаем объект, открываем страницу
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = MainPage(browser, link)
+    page.open()
+    #но здксь используем другой метод - провернку наличия ссылки
+    page.should_be_login_link()
